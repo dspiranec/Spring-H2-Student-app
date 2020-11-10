@@ -1,6 +1,6 @@
 # Spring + H2 - Student app
-  -Frontend projekt napravljen u Springu i H2
+  -Frontend project made in Spring + H2
 
-  -Aplikacija za studente 
+  -Application for students 
   
-  -Projekt sa faksa
+  -College project
