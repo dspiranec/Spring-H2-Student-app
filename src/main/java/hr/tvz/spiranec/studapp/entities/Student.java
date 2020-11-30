@@ -1,14 +1,19 @@
-package hr.tvz.spiranec.studapp.student;
+package hr.tvz.spiranec.studapp.entities;
 
-import hr.tvz.spiranec.studapp.course.Course;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "student")
 public class Student {
 
@@ -28,56 +33,4 @@ public class Student {
     @ManyToMany(mappedBy = "students")
     private List<Course> courses = new ArrayList<>();
 
-
-    public Student(String jmbag, String firstName, String lastName, LocalDate dateOfBirth, Integer numberOfEcts) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.jmbag = jmbag;
-        this.numberOfEcts = numberOfEcts;
-    }
-
-    public Student() {
-
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getJmbag() {
-        return jmbag;
-    }
-
-    public void setJmbag(String jmbag) {
-        this.jmbag = jmbag;
-    }
-
-    public Integer getNumberOfEcts() {
-        return numberOfEcts;
-    }
-
-    public void setNumberOfEcts(Integer numberOfEcts) {
-        this.numberOfEcts = numberOfEcts;
-    }
 }

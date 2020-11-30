@@ -1,10 +1,10 @@
 package hr.tvz.spiranec.studapp.security;
 
-import hr.tvz.spiranec.studapp.authority.Authority;
-import hr.tvz.spiranec.studapp.user.User;
-import hr.tvz.spiranec.studapp.user.UserDTO;
-import hr.tvz.spiranec.studapp.user.UserRepository;
-import org.apache.catalina.mapper.Mapper;
+
+import hr.tvz.spiranec.studapp.dto.UserDTO;
+import hr.tvz.spiranec.studapp.entities.Authority;
+import hr.tvz.spiranec.studapp.entities.User;
+import hr.tvz.spiranec.studapp.repositories.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

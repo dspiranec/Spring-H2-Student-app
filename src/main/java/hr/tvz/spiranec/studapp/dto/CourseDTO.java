@@ -1,31 +1,16 @@
-package hr.tvz.spiranec.studapp.course;
+package hr.tvz.spiranec.studapp.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CourseDTO {
-
     private String name;
     private Integer numberOfEcts;
 
-    public CourseDTO(String name, Integer numberOfEcts) {
-        this.name = name;
-        this.numberOfEcts = numberOfEcts;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getNumberOfEcts() {
-        return numberOfEcts;
-    }
-
-    public void setNumberOfEcts(Integer numberOfEcts) {
-        this.numberOfEcts = numberOfEcts;
-    }
 }

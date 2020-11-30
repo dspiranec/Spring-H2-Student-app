@@ -15,8 +15,9 @@ public class SchedulerConfig {
 
     @Bean
     public Trigger objavaJobTrigger() {
+
         SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
-                .withIntervalInSeconds(10).repeatForever();
+                .withIntervalInSeconds(3600).repeatForever();
 
         return TriggerBuilder.newTrigger().forJob(StudentJobDetail())
                 .withIdentity("StudentJobTrigger").withSchedule(scheduleBuilder).build();

@@ -1,11 +1,17 @@
-package hr.tvz.spiranec.studapp.student;
+package hr.tvz.spiranec.studapp.commands;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class StudentCommand {
 
     @NotBlank(message = "First name must not be empty")
@@ -37,29 +43,4 @@ public class StudentCommand {
         this.dateOfBirth = LocalDate.parse(dateOfBirth, dateFormatter);
         this.numberOfEcts = numberOfEcts;
     }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getJmbag() {
-        return jmbag;
-    }
-
-    public void setJmbag(String jmbag) {
-        this.jmbag = jmbag;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public Integer getNumberOfEcts() {
-        return numberOfEcts;
-    }
-
 }

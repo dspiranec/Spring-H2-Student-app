@@ -1,14 +1,14 @@
 package hr.tvz.spiranec.studapp.quartz;
 
-import hr.tvz.spiranec.studapp.student.StudentDTO;
-import hr.tvz.spiranec.studapp.student.StudentService;
+import hr.tvz.spiranec.studapp.dto.StudentDTO;
+import hr.tvz.spiranec.studapp.services.StudentService;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 public class StudentJob extends QuartzJobBean {
 
@@ -30,4 +30,6 @@ public class StudentJob extends QuartzJobBean {
 
         System.out.println("----------------------------------");
     }
+
+
 }

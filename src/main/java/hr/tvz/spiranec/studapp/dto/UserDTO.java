@@ -1,13 +1,13 @@
-package hr.tvz.spiranec.studapp.user;
+package hr.tvz.spiranec.studapp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Set;
 
-@Getter
 @ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDTO {
 
     private Integer id;
@@ -16,11 +16,4 @@ public class UserDTO {
     private String lastName;
     private Set<String> authorities;
 
-    public UserDTO(Integer id, String username, String firstName, String lastName, Set<String> authorities) {
-        this.id = id;
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.authorities = authorities;
-    }
 }

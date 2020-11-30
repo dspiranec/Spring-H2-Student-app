@@ -1,14 +1,16 @@
-package hr.tvz.spiranec.studapp.course;
+package hr.tvz.spiranec.studapp.entities;
 
-import hr.tvz.spiranec.studapp.student.Student;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Course {
 
@@ -25,11 +27,4 @@ public class Course {
     )
     List<Student> students = new ArrayList<>();
 
-    public String getName() {
-        return name;
-    }
-
-    public Integer getNumberOfEcts() {
-        return numberOfEcts;
-    }
 }

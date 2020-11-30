@@ -1,18 +1,19 @@
-package hr.tvz.spiranec.studapp.course;
+package hr.tvz.spiranec.studapp.controllers;
 
+import hr.tvz.spiranec.studapp.dto.CourseDTO;
+import hr.tvz.spiranec.studapp.services.CourseService;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("courses")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CourseController {
 
-    private CourseService courseService;
-
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
-    }
+    private final CourseService courseService;
 
     @GetMapping
     public List<CourseDTO> getAllCourses(){

@@ -1,10 +1,16 @@
-package hr.tvz.spiranec.studapp.user;
+package hr.tvz.spiranec.studapp.entities;
 
-import hr.tvz.spiranec.studapp.authority.Authority;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "user")
 public class User {
 
@@ -26,31 +32,5 @@ public class User {
 
     @ManyToMany(mappedBy = "users")
     private Set<Authority> authorities;
-
-    public User() { }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public Set<Authority> getAuthorities() {
-        return authorities;
-    }
 
 }

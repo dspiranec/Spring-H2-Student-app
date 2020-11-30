@@ -1,6 +1,5 @@
 package hr.tvz.spiranec.studapp.security;
 
-import org.apache.coyote.http11.upgrade.UpgradeServletOutputStream;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -8,13 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -23,12 +21,10 @@ class LoginControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private String token;
 
     @Test
-    void authenticate() throws Exception {
+    void ShouldAuthenticateAndReturnUnauthorized() throws Exception {
 
-        //isUnauthorized
         this.mockMvc.perform(
                 post("/api/authenticate")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -40,7 +36,7 @@ class LoginControllerTest {
     }
 
     @Test
-    void getCurrentUser() throws Exception {
+    void shouldGetCurrentUserAndReturnOk() throws Exception {
 
         this.mockMvc.perform(
                 get("/api/user/current-user")
@@ -48,7 +44,7 @@ class LoginControllerTest {
                                 .password("admin")
                                 .roles("ADMIN")))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON));;
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
 
 
     }
